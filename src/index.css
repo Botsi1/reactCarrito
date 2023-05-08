@@ -220,3 +220,28 @@ botton {
   background-color: blue;
   padding: 10px;
 }
+.ticket {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f9f9f9;
+}
+
+.ticket h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.ticket p {
+  margin: 5px 0;
+}
+
+.ticket ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ticket li {
+  margin: 5px 0;
+}
