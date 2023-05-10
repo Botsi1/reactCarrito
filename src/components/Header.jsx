@@ -9,12 +9,8 @@ export const Header = ({
   countProducts,
   setCountProducts,
   setTotal,
-  order,
-  commerce_code,
 }) => {
   const [active, setActive] = useState(false);
-
-  // console.log(allProducts);
 
   const onDeleteProduct = (product) => {
     const results = allProducts.filter((item) => item.id !== product.id);

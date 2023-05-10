@@ -4,13 +4,16 @@ import { Detail } from "./components/Detail";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Commit } from "./components/Commit";
+import Status from "./components/Status";
+
+import Refund from "./components/Refund";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
   const order = "O-" + Math.floor(Math.random() * 10000) + 1;
-  const commerce_code = 12345;
+  const commerce_code = 597055555536;
 
   const router = createBrowserRouter([
     {
@@ -35,7 +38,7 @@ function App() {
           allProducts={allProducts}
           order={order}
           items={allProducts}
-          commer_code={commerce_code}
+          commerce_code={commerce_code}
           total={total}
         />
       ),
@@ -43,6 +46,14 @@ function App() {
     {
       path: "commit",
       element: <Commit />,
+    },
+    {
+      path: "status/:token_ws",
+      element: <Status />,
+    },
+    {
+      path: "refund/:token_ws/:amount/:commerce_code",
+      element: <Refund order={order} />,
     },
   ]);
 
