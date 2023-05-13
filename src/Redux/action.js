@@ -3,7 +3,8 @@ export const BUY_PRODUCT = "BUY_PRODUCT";
 export const COMMIT = "COMMIT";
 export const STATUS = "STATUS";
 export const REFUND = "REFUND";
-
+var cloud = "https://qqj8zu-3001.csb.app/webpay_plus_mall/";
+var remot = "localhost:3001/webpay_plus_mall";
 export function buyProducts(payload) {
   console.log(payload);
   return async function (dispatch) {
