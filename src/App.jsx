@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Header } from "./components/Header";
-import { Detail } from "./components/Detail";
+import { Header } from "./components/Header/Header";
+import { Detail } from "./components/Detail/Detail";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Commit } from "./components/Commit";
-import Status from "./components/Status";
+import { Commit } from "./components/Commit/Commit";
+import Status from "./components/Status/Status";
 
-import Refund from "./components/Refund";
+import Refund from "./components/Refund/Refund";
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);

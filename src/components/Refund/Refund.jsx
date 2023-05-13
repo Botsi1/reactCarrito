@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "./Loader.jsx";
-import { refund } from "../Redux/action";
+import Loader from "../Loader/Loader.jsx";
+import { refund } from "../../Redux/action";
 
 const Refund = ({ order }) => {
   const dispatch = useDispatch();

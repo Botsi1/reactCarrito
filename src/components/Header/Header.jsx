@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ProductList } from "./ProductList.jsx";
+import { ProductList } from "../ProductList/ProductList";
 
 export const Header = ({
   allProducts,
