@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { commit } from "../Redux/action";
-import Loader from "./Loader.jsx";
+import { commit } from "../../Redux/action";
+import Loader from "../Loader/Loader";
 import { Link } from "react-router-dom";
-import SuccessfulPurchase from "./SuccessfulPurchase";
-import FailedPurchase from "./FailedPurchase";
+import SuccessfulPurchase from "../SuccessfulPurchase/SuccessfulPurchase";
+import FailedPurchase from "../FailedPurchase/FailedPurchase";
+import "./commit.css";
 
 export const Commit = () => {
   const dispatch = useDispatch();
@@ -36,20 +37,16 @@ export const Commit = () => {
       {charge ? (
         <Loader />
       ) : response_code === 0 ? (
-        <div>
+        <div className="container-succes">
           <SuccessfulPurchase />
           <Link to={"/status/" + token_ws}>
-            <button className="btn-clear-all botton">
-              Ver estado de la compra
-            </button>
-          </Link>
-
-          <Link to={"/refund/" + token_ws + "/" + amount + "/" + commerce_code}>
-            <button className="btn-clear-all botton">Anular compra</button>
+            <button className=" payButton">Ver estado de la compra</button>
           </Link>
         </div>
       ) : (
-        <FailedPurchase />
+        <div className="container-succes">
+          <FailedPurchase />
+        </div>
       )}
     </>
   );

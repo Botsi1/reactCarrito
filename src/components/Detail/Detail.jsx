@@ -1,10 +1,10 @@
 import { useState } from "react";
-import "../index.css";
-import { WebpayForm } from "./WebpayForm.jsx";
+import "./detail.css";
+import { WebpayForm } from "../Webpayform/WebpayForm";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { buyProducts } from "../Redux/action.js";
-import Loader from "./Loader.jsx";
+import { buyProducts } from "../../Redux/action";
+import Loader from "../Loader/Loader";
 
 export const Detail = ({ order, allProducts, commerce_code, total }) => {
   const [charge, setCharge] = useState(false);
@@ -40,17 +40,19 @@ export const Detail = ({ order, allProducts, commerce_code, total }) => {
       {charge ? (
         <Loader />
       ) : (
-        <div className="ticket">
-          <h2>Order #{order}</h2>
-          <p>Amount: \${total}</p>
-          <ul>
-            {allProducts.map((item) => (
-              <li key={item.id}>
-                {item.nameProduct} - \${item.price}
-              </li>
-            ))}
-          </ul>
-          <WebpayForm url={url} token={token} />
+        <div className="ticket-container">
+          <div className="ticket">
+            <h2>Order #{order}</h2>
+            <p>Amount: \${total}</p>
+            <ul>
+              {allProducts.map((item) => (
+                <li key={item.id}>
+                  {item.nameProduct} - \${item.price}
+                </li>
+              ))}
+            </ul>
+            <WebpayForm url={url} token={token} />
+          </div>
         </div>
       )}
     </>
